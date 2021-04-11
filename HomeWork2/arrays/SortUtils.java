@@ -115,8 +115,8 @@ public class SortUtils {
                     arr[i] = arr[i-1];
                     arr[i-1] = tmp;
                 }
-                leftBorder++;
             }
+            leftBorder++;
         } while (leftBorder < rightBorder);
 
         System.out.println("Массив после сортировки: " + Arrays.toString(arr));
