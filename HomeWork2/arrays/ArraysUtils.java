@@ -1,6 +1,6 @@
 package HomeWork2.arrays;
 
-/*	2.1. Создать класс ArraysUtils:
+/**	2.1. Создать класс ArraysUtils:
 		2.1.1. Написать метод public static int[] arrayFromConsole() рядом с main.
 		Данный метод размер массива и каждый его элемент запрашивает у пользователя через консоль.
 
@@ -16,7 +16,7 @@ public class ArraysUtils {
 
     public static void main(String[] args) throws Exception {
 
-        /* 2.1.1.1. Пример int[] container = arrayFromConsole().
+        /** 2.1.1.1. Пример int[] container = arrayFromConsole().
  Результат: В методе arrayFromConsole будет запрошена информация у пользователя,пользователь вводит размер (3)
  и его элементы по порядку {4, 17, 32}. Соответсвенно будет создан массив размером 3 с элементами {4, 17, 32}
  и сохранён в переменную container.
@@ -29,7 +29,7 @@ public class ArraysUtils {
 
         System.out.println("\n");
 
-        /* 2.1.2.1. Пример: int[] container = arrayRandom(5, 100). Результат: В методе arrayRandom будет создан
+        /** 2.1.2.1. Пример: int[] container = arrayRandom(5, 100). Результат: В методе arrayRandom будет создан
 массив размером 5 с числами от 0 до 99 (использовать класс Random) и сохранён в переменную container.
 */
         System.out.println("Пример отработки метода arrayRandom:");
@@ -39,7 +39,7 @@ public class ArraysUtils {
         }
     }
 
-    /* Метод запрашивает размер массива и каждый его элемент у пользователя через консоль.*/
+    /** Метод запрашивает размер массива и каждый его элемент у пользователя через консоль.*/
     public static int[] arrayFromConsole() throws Exception {
         BufferedReader line = new BufferedReader(new InputStreamReader(System.in));
         System.out.print("Задайте размер массива (целое число): ");
@@ -56,7 +56,7 @@ public class ArraysUtils {
         return arr;
     }
 
-    /* Метод принимает два аргумента. Первый (size) указывает размер массива который мы хотим получить.
+    /** Метод принимает два аргумента. Первый (size) указывает размер массива который мы хотим получить.
 Второй (maxValueExclusion) указывает до какого числа генерировать рандомные числа.*/
     public static int[] arrayRandom (int size, int maxValueExclusion) {
 

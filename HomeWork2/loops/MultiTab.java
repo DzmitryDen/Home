@@ -1,5 +1,9 @@
 package HomeWork2.loops;
 
+/** 1.5. Вывести таблицу умножения в консоль. В консоли должно получиться также как и на картинке
+ * https://www.dropbox.com/s/ibakfuppvy2w32g/multiplication_table.jpeg?dl=0
+ * */
+
 public class MultiTab {
 
     public static void main(String[] args) {

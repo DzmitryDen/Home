@@ -1,6 +1,6 @@
 package HomeWork2.arrays;
 
-/*
+/**
 2.2 Перебор массива при помощи do....while, while, for, foreach.
 Элементы массива вводить используя ранее созданный arrayFromConsole.
 Все задачи в одном классе, в отдельных методах. Должно получиться 3 метода:
@@ -13,28 +13,28 @@ public class ArraysRun {
 
     public static void main(String[] args) throws Exception {
 
-        // for
+        /** for */
         System.out.println("Перебор массива с помощью for");
         runFor(ArraysUtils.arrayFromConsole());
         System.out.println("\n");
 
-        // while
+        /** while */
         System.out.println("Перебор массива с помощью while");
         runWhile(ArraysUtils.arrayFromConsole());
         System.out.println("\n");
 
-        // do...while
+        /** do...while */
         System.out.println("Перебор массива с помощью do...while");
         runDoWhile(ArraysUtils.arrayFromConsole());
         System.out.println("\n");
 
-        // foreach
+        /** foreach */
         System.out.println("Перебор массива с помощью foreach");
         runForeach(ArraysUtils.arrayFromConsole());
         System.out.println("\n");
     }
 
-    /* Перебор массива с помощью for */
+    /** Перебор массива с помощью for */
     public static void runFor (int[] Method) {
         int[] container = Method;
 
@@ -57,7 +57,7 @@ public class ArraysRun {
         System.out.println();
     }
 
-    /* Перебор массива с помощью while */
+    /** Перебор массива с помощью while */
     public static void runWhile (int[] Method) {
 
         int[] container = Method;
@@ -87,7 +87,7 @@ public class ArraysRun {
         System.out.println();
     }
 
-    /* Перебор массива с помощью do...while */
+    /** Перебор массива с помощью do...while */
     public static void runDoWhile (int[] Method) {
 
         int[] container = Method;
@@ -120,7 +120,7 @@ public class ArraysRun {
         System.out.println();
     }
 
-    /* Перебор массива с помощью foreach */
+    /** Перебор массива с помощью foreach */
     public static void runForeach (int[] Method) {
 
         int[] container = Method;
