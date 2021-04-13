@@ -22,6 +22,6 @@ public class CalculatorWithOperatorMain {
         double sum1 = calc1.addition(a, multi); // находим первую сумму
         double res = calc1.addition(sum1, exp); // находим результат
 
-        System.out.println(res);
+        System.out.println("Результат выражения: " + res);
     }
 }
