@@ -81,6 +81,4 @@ public class CalculatorWithOperator {
         double res = Math.sqrt(a);
         return res;
     }
-
-
 }

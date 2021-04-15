@@ -4,19 +4,19 @@ import HomeWork3.calcs.simple.CalculatorWithMathExtends;
 
 public class CalculatorWithCounterClassic extends CalculatorWithMathExtends {
 
-    long i = 0; // внутренний счетчик калькулятора
+   private long i; // внутренний счетчик калькулятора
 
     /**
      метод увеличивающий внутренний счетчик
      * */
     public void incrementCountOperation() {
-        i++;
+        this.i++;
     }
 
     /**
      метод возвращающий количество использований калькулятора
      * */
     public long getCountOperation() {
-        return i;
+        return this.i;
     }
 }

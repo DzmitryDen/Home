@@ -1,4 +1,6 @@
-package HomeWork3.calcs.additional;
+package HomeWork3.runners;
+
+import HomeWork3.calcs.additional.CalculatorWithCounterClassic;
 
 public class CalculatorWithCounterClassicMain {
 
