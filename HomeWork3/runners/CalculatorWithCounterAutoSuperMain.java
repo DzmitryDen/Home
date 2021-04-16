@@ -1,6 +1,7 @@
 package HomeWork3.runners;
 
 import HomeWork3.calcs.additional.CalculatorWithCounterAutoSuper;
+import HomeWork3.calcs.simple.CalculatorWithMathCopy;
 
 public class CalculatorWithCounterAutoSuperMain {
 
@@ -16,13 +17,19 @@ public class CalculatorWithCounterAutoSuperMain {
         double d = 28;
         double e = 5;
 
-        double multi = calc5.multiplication(b, c);// вычисляем произведение 15 * 7
-        double div = calc5.division(d, e); // вычисляем частное 28 / 5
-        double exp = calc5.exponent(div, 2); // возводим частное в квадрат (умножаем само на себя);
-        double sum1 = calc5.addition(a, multi); // находим первую сумму
-        double res = calc5.addition(sum1, exp); // находим результат
+        countAndPrint(calc5, a, b, c, d, e);
+    }
 
+    public static void countAndPrint (CalculatorWithCounterAutoSuper calculator, double a, double b, double c, double d, double e) {
+
+        double multi = calculator.multiplication(b, c); // вычисляем произведение 15 * 7
+        double div = calculator.division(d, e); // вычисляем частное 28 / 5
+        double exp = calculator.exponent(div, 2); // возводим частное в квадрат (умножаем само на себя);
+        double sum = calculator.addition(a, multi); // находим первую сумму
+        double res = calculator.addition(sum, exp); // находим результат
+
+        System.out.println("Выражение: 4.1 + 15 * 7 + (28 / 5.0) * (28 / 5.0)");
         System.out.println("Результат выражения: " + res);
-        System.out.println("Количество использований калькулятора: "  + calc5.getCountOperation());
+        System.out.println("Количество использований калькулятора: "  + calculator.getCountOperation());
     }
 }

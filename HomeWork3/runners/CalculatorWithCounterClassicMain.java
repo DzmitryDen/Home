@@ -1,6 +1,7 @@
 package HomeWork3.runners;
 
 import HomeWork3.calcs.additional.CalculatorWithCounterClassic;
+import HomeWork3.calcs.simple.CalculatorWithMathCopy;
 
 public class CalculatorWithCounterClassicMain {
 
@@ -15,18 +16,24 @@ public class CalculatorWithCounterClassicMain {
         double d = 28;
         double e = 5;
 
-        double multi = calc4.multiplication(b, c);// вычисляем произведение 15 * 7
-        calc4.incrementCountOperation();
-        double div = calc4.division(d, e); // вычисляем частное 28 / 5
-        calc4.incrementCountOperation();
-        double exp = calc4.exponent(div, 2); // возводим частное в квадрат (умножаем само на себя);
-        calc4.incrementCountOperation();
-        double sum1 = calc4.addition(a, multi); // находим первую сумму
-        calc4.incrementCountOperation();
-        double res = calc4.addition(sum1, exp); // находим результат
-        calc4.incrementCountOperation();
+        countAndPrint(calc4, a, b, c, d, e);
+    }
 
+    public static void countAndPrint (CalculatorWithCounterClassic calculator, double a, double b, double c, double d, double e) {
+
+        double multi = calculator.multiplication(b, c);// вычисляем произведение 15 * 7
+        calculator.incrementCountOperation();
+        double div = calculator.division(d, e); // вычисляем частное 28 / 5
+        calculator.incrementCountOperation();
+        double exp = calculator.exponent(div, 2); // возводим частное в квадрат (умножаем само на себя);
+        calculator.incrementCountOperation();
+        double sum = calculator.addition(a, multi); // находим первую сумму
+        calculator.incrementCountOperation();
+        double res = calculator.addition(sum, exp); // находим результат
+        calculator.incrementCountOperation();
+
+        System.out.println("Выражение: 4.1 + 15 * 7 + (28 / 5.0) * (28 / 5.0)");
         System.out.println("Результат выражения: " + res);
-        System.out.println("Количество использований калькулятора: " + calc4.getCountOperation());
+        System.out.println("Количество использований калькулятора: " + calculator.getCountOperation());
     }
 }
