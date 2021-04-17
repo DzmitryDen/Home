@@ -1,6 +1,8 @@
 package HomeWork3.calcs.simple;
 
-public class CalculatorWithOperator {
+import HomeWork3.calcs.api.ICalculator;
+
+public class CalculatorWithOperator implements ICalculator {
 
     /**
      * деление: a / b
