@@ -11,9 +11,13 @@ public class CalculatorWithCounterAutoCompositeInterfaceMain {
 
     public static void main(String[] args) {
 
-        ICalculator iCalculatorCop = new CalculatorWithCounterAutoCompositeInterface(new CalculatorWithMathCopy());
-        ICalculator iCalculatorOp = new CalculatorWithCounterAutoCompositeInterface(new CalculatorWithOperator());
-        ICalculator iCalculatorEx = new CalculatorWithCounterAutoCompositeInterface(new CalculatorWithMathExtends());
+        CalculatorWithCounterAutoCompositeInterface cop = new CalculatorWithCounterAutoCompositeInterface(new CalculatorWithMathCopy());
+        CalculatorWithCounterAutoCompositeInterface op = new CalculatorWithCounterAutoCompositeInterface(new CalculatorWithOperator());
+        CalculatorWithCounterAutoCompositeInterface ex = new CalculatorWithCounterAutoCompositeInterface(new CalculatorWithMathExtends());
+
+        ICalculator iCalculatorCop = cop;
+        ICalculator iCalculatorOp = op;
+        ICalculator iCalculatorEx = ex;
 
         // 4.1 + 15 * 7 + (28 / 5.0) * (28 / 5.0) = 140.46
 
@@ -28,18 +32,21 @@ public class CalculatorWithCounterAutoCompositeInterfaceMain {
          */
         System.out.println("Вычисление выполняет калькулятор CalculatorWithMathCopy");
         countAndPrint(iCalculatorCop, a, b, c, d, e);
+        System.out.println("Количество использований калькулятора: "  + cop.getCountOperation() + "\n");
 
         /**
          * Делегируем выполнение калькулятору CalculatorWithOperator
          */
         System.out.println("Вычисление выполняет калькулятор CalculatorWithOperator");
         countAndPrint(iCalculatorOp, a, b, c, d, e);
+        System.out.println("Количество использований калькулятора: "  + op.getCountOperation() + "\n");
 
         /**
          * Делегируем выполнение калькулятору CalculatorWithMathExtends
          */
         System.out.println("Вычисление выполняет калькулятор CalculatorWithMathExtends");
         countAndPrint(iCalculatorEx, a, b, c, d, e);
+        System.out.println("Количество использований калькулятора: "  + ex.getCountOperation() + "\n");
 
 
     }
@@ -54,6 +61,5 @@ public class CalculatorWithCounterAutoCompositeInterfaceMain {
 
         System.out.println("Выражение: 4.1 + 15 * 7 + (28 / 5.0) * (28 / 5.0)");
         System.out.println("Результат выражения: " + res);
-        System.out.println();
     }
 }
