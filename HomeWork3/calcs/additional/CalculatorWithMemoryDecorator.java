@@ -7,7 +7,6 @@ public class CalculatorWithMemoryDecorator implements ICalculator{
 
     ICalculator calculator;
 
-
     public CalculatorWithMemoryDecorator(ICalculator calculator) {
         this.calculator = calculator;
     }
