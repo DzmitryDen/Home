@@ -8,55 +8,48 @@ public class CalculatorWithMathCopy implements ICalculator {
      * деление: a / b
      */
     public double division(double a, double b){
-        double res = a / b;
-        return res;
+        return a / b;
     }
 
     /**
      * умножение: a * b
      */
     public double multiplication(double a, double b){
-        double res = a * b;
-        return res;
+        return  a * b;
     }
 
     /**
      * вычитание: a - b
      */
     public double subtraction(double a, double b){
-        double res = a - b;
-        return res;
+        return a - b;
     }
 
     /**
      * сложение: a + b
      */
     public double addition(double a, double b){
-        double res = a + b;
-        return res;
+        return  a + b;
     }
 
     /**
      * возведение в целую степень: a ^ b
      */
     public double exponent(double a, int b) {
-        double res = Math.pow(a, b);
-        return res;
+        return Math.pow(a, b);
     }
 
     /**
      * модуль числа  a
      */
     public double mod(double a) {
-        double res = Math.abs(a);
-        return res;
+        return Math.abs(a);
     }
 
     /**
      * квадратный корень из числа  a
      */
     public double sqr(double a) {
-        double res = Math.sqrt(a);
-        return res;
+        return Math.sqrt(a);
     }
 }

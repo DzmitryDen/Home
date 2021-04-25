@@ -8,23 +8,20 @@ public class CalculatorWithMathExtends extends CalculatorWithOperator implements
      * возведение в целую степень: a ^ b
      */
     public double exponent(double a, int b) {
-        double res = Math.pow(a, b);
-        return res;
+        return Math.pow(a, b);
     }
 
     /**
      * модуль числа  a
      */
     public double mod(double a) {
-        double res = Math.abs(a);
-        return res;
+        return Math.abs(a);
     }
 
     /**
      * квадратный корень из числа  a
      */
     public double sqr(double a) {
-        double res = Math.sqrt(a);
-        return res;
+        return Math.sqrt(a);
     }
 }

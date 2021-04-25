@@ -2,38 +2,34 @@ package HomeWork3.calcs.simple;
 
 import HomeWork3.calcs.api.ICalculator;
 
-public class CalculatorWithOperator implements ICalculator {
+public class CalculatorWithOperator implements ICalculator{
 
     /**
      * деление: a / b
      */
     public double division(double a, double b){
-        double res = a / b;
-        return res;
+        return  a / b;
     }
 
     /**
      * умножение: a * b
      */
     public double multiplication(double a, double b){
-        double res = a * b;
-        return res;
+        return  a * b;
     }
 
     /**
      * вычитание: a - b
      */
     public double subtraction(double a, double b){
-        double res = a - b;
-        return res;
+        return a - b;
     }
 
     /**
      * сложение: a + b
      */
     public double addition(double a, double b){
-        double res = a + b;
-        return res;
+        return a + b;
     }
 
     /**
@@ -41,27 +37,10 @@ public class CalculatorWithOperator implements ICalculator {
      */
     public double exponent(double a, int b){
         double res = 1;
-
-        if (b == 0) {
-            res = 1.0;
+        for (int i = 1; i <= b ; i++) {
+            res *=a;
         }
 
-        if(b > 0) {
-            while (b > 0) {
-                res *= a;
-                b --;
-            }
-        }
-
-        if (b < 0) {
-            int b1 = -1 * b; // модуль
-            double res1 = 1; // переменная для промежуточного результата
-            while (b1 > 0) {
-                res1 *= a;
-                res = 1 / res1;
-                b1 --;
-            }
-        }
         return res;
     }
 
@@ -69,18 +48,15 @@ public class CalculatorWithOperator implements ICalculator {
      * модуль числа  a
      */
     public double mod(double a) {
-        double res = a;
         if(a < 0 ) {
-            res = -1 * a;
-        }
-        return res;
+            return -a;
+        } else return a;
     }
 
     /**
      * квадратный корень из числа  a
      */
     public double sqr(double a) {
-        double res = Math.sqrt(a);
-        return res;
+        return Math.sqrt(a);
     }
 }
