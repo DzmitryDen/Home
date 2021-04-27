@@ -4,54 +4,60 @@ import HomeWork3.calcs.api.ICalculator;
 
 public class CalculatorWithCounterAutoCompositeInterface implements ICalculator{
 
-    private long i = 0; // внутренний счетчик калькулятора
+    /**
+     * переменная - счетчик
+     */
+    private long i;
 
-    ICalculator calculator;
+    private ICalculator calculator;
 
+    /**
+     * конструктор
+     */
     public CalculatorWithCounterAutoCompositeInterface (ICalculator calculator) {
         this.calculator = calculator;
     }
 
+    /**
+     * метод, увеличивающий счетчик на 1
+     */
+    public void incrementCountOperation() {
+        this.i++;
+    }
+
     public double division(double a, double b) {
-        double res = calculator.division(a, b);
-        i++;
-        return res;
+        incrementCountOperation();
+        return calculator.division(a, b);
     }
 
     public double multiplication(double a, double b) {
-        double res = calculator.multiplication(a, b);
-        i++;
-        return res;
+        incrementCountOperation();
+        return calculator.multiplication(a, b);
     }
 
     public double subtraction(double a, double b) {
-        double res = calculator.subtraction(a, b);
-        i++;
-        return res;
+        incrementCountOperation();
+        return calculator.subtraction(a, b);
     }
 
     public double addition(double a, double b) {
-        double res = calculator.addition(a, b);
-        i++;
-        return res;
+        incrementCountOperation();
+        return calculator.addition(a, b);
     }
 
     public double exponent(double a, int b) {
-        double res = calculator.exponent(a, b);
-        i++;
-        return res;
+        incrementCountOperation();
+        return calculator.exponent(a, b);
     }
 
     public double mod(double a) {
-        double res = calculator.mod(a);
-        i++;
-        return res;
+        incrementCountOperation();
+        return calculator.mod(a);
     }
 
     public double sqr(double a) {
-        double res = calculator.sqr(a);
-        i++;
-        return res;
+        incrementCountOperation();
+        return calculator.sqr(a);
     }
 
     public long getCountOperation() {

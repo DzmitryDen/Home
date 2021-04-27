@@ -30,6 +30,7 @@ public class CalculatorWithCounterAutoCompositeInterfaceMain {
         /**
          * Делегируем выполнение калькулятору CalculatorWithMathCopy
          */
+        System.out.println();
         System.out.println("Вычисление выполняет калькулятор CalculatorWithMathCopy");
         countAndPrint(iCalculatorCop, a, b, c, d, e);
         System.out.println("Количество использований калькулятора: "  + cop.getCountOperation() + "\n");
