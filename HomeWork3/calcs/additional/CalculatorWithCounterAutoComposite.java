@@ -6,7 +6,17 @@ import HomeWork3.calcs.simple.CalculatorWithOperator;
 
 public class CalculatorWithCounterAutoComposite {
 
-    private long i = 0; // внутренний счетчик калькулятора
+    /**
+     * переменная - счетчик
+     */
+    private long i;
+
+    /**
+     * метод, увеличивающий счетчик на 1
+     */
+    public void incrementCountOperation() {
+        this.i++;
+    }
 
     /**
      * Объявляем поля классов, которым делегируем
@@ -42,43 +52,43 @@ public class CalculatorWithCounterAutoComposite {
      */
     public double divisionOP(double a, double b){
         double res = calcOp.division(a,b);
-        i++;
+        incrementCountOperation();
         return res;
     }
 
     public double multiplicationOP(double a, double b){
         double res = calcOp.multiplication(a,b);
-        i++;
+        incrementCountOperation();
         return res;
     }
 
     public double subtractionOP(double a, double b){
         double res = calcOp.subtraction(a,b);
-        i++;
+        incrementCountOperation();
         return res;
     }
 
     public double additionOP(double a, double b){
         double res = calcOp.addition(a,b);
-        i++;
+        incrementCountOperation();
         return res;
     }
 
     public double exponentOP (double a, int b){
         double res = calcOp.exponent(a,b);
-        i++;
+        incrementCountOperation();
         return res;
     }
 
     public double modOP(double a) {
         double res = calcOp.mod(a);
-        i++;
+        incrementCountOperation();
         return res;
     }
 
     public double sqrOP(double a) {
         double res = calcOp.sqr(a);
-        i++;
+        incrementCountOperation();
         return res;
     }
 
@@ -87,43 +97,43 @@ public class CalculatorWithCounterAutoComposite {
      */
     public double divisionCop(double a, double b){
         double res = calcCop.division(a,b);
-        i++;
+        incrementCountOperation();
         return res;
     }
 
     public double multiplicationCop(double a, double b){
         double res = calcCop.multiplication(a,b);
-        i++;
+        incrementCountOperation();
         return res;
     }
 
     public double subtractionCop(double a, double b){
         double res = calcCop.subtraction(a,b);
-        i++;
+        incrementCountOperation();
         return res;
     }
 
     public double additionCop(double a, double b){
         double res = calcCop.addition(a,b);
-        i++;
+        incrementCountOperation();
         return res;
     }
 
     public double exponentCop (double a, int b){
         double res = calcCop.exponent(a,b);
-        i++;
+        incrementCountOperation();
         return res;
     }
 
     public double modCop(double a) {
         double res = calcCop.mod(a);
-        i++;
+        incrementCountOperation();
         return res;
     }
 
     public double sqrCop(double a) {
         double res = calcCop.sqr(a);
-        i++;
+        incrementCountOperation();
         return res;
     }
 
@@ -132,47 +142,47 @@ public class CalculatorWithCounterAutoComposite {
      */
     public double divisionEx(double a, double b){
         double res = calcEx.division(a,b);
-        i++;
+        incrementCountOperation();
         return res;
     }
 
     public double multiplicationEx(double a, double b){
         double res = calcEx.multiplication(a,b);
-        i++;
+        incrementCountOperation();
         return res;
     }
 
     public double subtractionEx(double a, double b){
         double res = calcEx.subtraction(a,b);
-        i++;
+        incrementCountOperation();
         return res;
     }
 
     public double additionEx(double a, double b){
         double res = calcEx.addition(a,b);
-        i++;
+        incrementCountOperation();
         return res;
     }
 
     public double exponentEx (double a, int b){
         double res = calcEx.exponent(a,b);
-        i++;
+        incrementCountOperation();
         return res;
     }
 
     public double modEx(double a) {
         double res = calcEx.mod(a);
-        i++;
+        incrementCountOperation();
         return res;
     }
 
     public double sqrEx(double a) {
         double res = calcEx.sqr(a);
-        i++;
+        incrementCountOperation();
         return res;
     }
 
     public long getCountOperation() {
-        return i;
+        return this.i;
     }
 }

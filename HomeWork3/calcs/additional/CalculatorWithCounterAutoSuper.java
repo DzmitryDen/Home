@@ -7,7 +7,7 @@ public class CalculatorWithCounterAutoSuper extends CalculatorWithMathExtends {
     /**
      * переменная - счетчик
      */
-    long i = 0;
+    private long i;
 
     /**
      * метод, увеличивающий счетчик на 1
