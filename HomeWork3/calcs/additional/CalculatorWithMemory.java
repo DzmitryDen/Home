@@ -22,7 +22,7 @@ public class CalculatorWithMemory implements ICalculator {
      * Метод возвращает результат последней операции из памяти
      */
     public void getMemory() {
-        System.out.println("Результат выполнения последней операции, хранящийся в памяти: " + this.mem);
+        System.out.println("Результат, хранящийся в памяти: " + this.mem);
         this.mem = 0;
     }
 
@@ -31,7 +31,7 @@ public class CalculatorWithMemory implements ICalculator {
         this.mem = res;
         return res;
     }
-    
+
     public double multiplication(double a, double b) {
         double res = calculator.multiplication(a, b);
         this.mem = res;

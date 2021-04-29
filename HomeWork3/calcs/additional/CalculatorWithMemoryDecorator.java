@@ -5,7 +5,7 @@ import HomeWork3.calcs.simple.CalculatorWithMathExtends;
 
 public class CalculatorWithMemoryDecorator implements ICalculator{
 
-    ICalculator calculator;
+   private ICalculator calculator;
 
     public CalculatorWithMemoryDecorator(ICalculator calculator) {
         this.calculator = calculator;
