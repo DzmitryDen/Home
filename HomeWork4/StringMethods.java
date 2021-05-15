@@ -1,6 +1,10 @@
 package HomeWork4;
 
 /**
+ * 1.* Написать метод String toString(int number).
+ * 	1.1 В данном методе произвести конвертацию переданного числа в число прописью. Числа от - 999 999 999 до 999 999 999
+ * 	1.2 Пример передали: 223. Получили "Двести двадцать три"
+ *
  * 3. Написать метод String toWeek(int day).
  * 	3.1 В данном методе посчитать количество прошедших недель по переданному числу дней.
  * 	3.2 Пример передали: 5. Получили "0 недель"
@@ -21,34 +25,121 @@ public class StringMethods {
 
     public static void main(String[] args) {
 
+        System.out.println(toString(-124502301));
         System.out.println(toWeek(6));
         System.out.println(toHoursMinuteSecondMillisecond(7789000, true));
 
+    }
+
+    public static String toString (int number) {
+
+        String [] hundred = {"", "сто ", "двести ", "триста ", "четыреста ",
+                "пятьсот ", "шестьсот ", "семьсот ", "восемьсот ", "девятьсот "};
+
+        String [] ten = {"", "десять ", "двадцать ", "тридцать ", "сорок ",
+                "пятьдесят ", "шестьдесят ", "семьдесят ", "восемьдесят ", "девяносто "};
+
+        String [] ten1 = {"", "одинадцать ", "двенадцать ", "тринадцать ", "четырнадцать ",
+                "пятнадцать ", "шестнадцать ", "семнадцать ", "восемнадцать ", "девятнадцать "};
+
+        String [] one = {"", "один ", "два ", "три ", "четыре ", "пять ", "шесть ", "семь ", "восемь ", "девять "};
+        String [] one1 = {"", "одна ", "две ", "три ", "четыре ", "пять" , "шесть ", "семь ", "восемь ", "девять "};
+
+        String[] millionText = {"миллионов ", "миллион ", "миллиона "};
+        String[] thousandText = {"тысяч ", "тысяча ", "тысячи "};
+
+        int million, thousand, units; // количество миллионов, тысяч, единиц (соответственно)
+        final int m = 1000000; // константа для вычисления миллионов
+        final int t = 1000; // константа для вычисления тысяч
+
+        int modNumber = Math.abs(number); // модуль переданного числа
+
+        million = modNumber / m; // считаем количество миллионов
+        modNumber = modNumber % m; // остаток числа без миллионов
+
+        thousand = modNumber / t; // считаем количество тысяч
+        units = modNumber % t; // остаток числа без тысяч
+
+        String message = ""; // сообщение
+
+        int M1 = million % 10; // переменная, хранящая остаток от деления Миллионов на 10
+        int M2 = million % 100; // переменная, хранящая остаток от деления Миллионов на 100
+
+        int T1 = thousand % 10; // переменная, хранящая остаток от деления Тысяч на 10
+        int T2 = thousand % 100; // переменная, хранящая остаток от деления Тысяч на 100
+
+        String textMil = checkNumber(million, hundred, ten, ten1, one);
+        String textThous = checkNumber(thousand, hundred, ten, ten1, one1);
+        String textUn = checkNumber(units, hundred, ten, ten1, one);
+
+        message = textNumber(million, millionText, textMil) + textNumber(thousand, thousandText, textThous) + textUn;
+
+        if (number < 0) message = "минус " + message;
+        if (number == 0) message = "ноль";
+
+        return message;
+    }
+
+    public static String checkNumber (int number, String[] h, String[] t, String[] t1, String[] o) {
+
+        int a = number / 100; // первая цифра переданного числа
+        int bd = number % 100; // хранит две последние цифры переданного числа
+        int b = bd / 10; // хранит вторую цифру переданного числа
+        int d = number % 10; // хранит третью цифру переданного числа
+
+        String A = ""; // первая цифра прописью
+        String BD = ""; // двузначное число прописью при условии < 20; >10
+        String B = ""; // вторая цифра прописью
+        String D = ""; // третья цифра прописью
+        String text; // число прописью
+
+        if (bd > 10 && bd < 20) {
+            for (int i = 0; i <=9 ; i++) {
+                if (a == i) A = h[i];
+                if (bd == i + 10) BD = t1[i];
+            }
+            text = A + BD;
+        } else {
+            for (int i = 0; i <=9 ; i++) {
+                if (a == i) A = h[i];
+                if (b == i) B = t[i];
+                if (d == i) D = o[i];
+            }
+            text = A + B + D;
+        }
+
+        return text;
+    }
+
+    public static String textNumber (int number, String[] numText, String text) {
+
+        int N1 = number % 10; // переменная, хранящая остаток от деления Переданного числа на 10
+        int N2 = number % 100; // переменная, хранящая остаток от деления Переданного числа на 100
+
+        String textNumberFull;
+
+        if ((N1 == 0 || (N1 >= 5 && N1 <= 9) || (N2 >= 11 && N2 <= 14)) && number != 0) {
+            textNumberFull = text + numText[0];
+        } else if (N1 == 1 && number != 0) {
+            textNumberFull = text + numText[1];
+        } else if (number != 0) {
+            textNumberFull = text + numText[2];
+        } else textNumberFull = "";
+
+        return textNumberFull;
     }
 
     public static String toWeek(int day) {
 
         String[] weekText = {"недель", "неделя", "недели"};
 
-        /**
-         * переменная, хранящая сообщение
-         */
-        String message;
+        String message; // переменная, хранящая сообщение
 
-        /**
-         * переменная, хранящая полное количество недель
-         */
-        int week = day / 7;
+        int week = day / 7; // переменная, хранящая полное количество недель
 
-        /**
-         * переменная, хранящую остаток от деления на 10
-         */
-        int a = week % 10;
+        int a = week % 10; // переменная, хранящую остаток от деления на 10
 
-        /**
-         * переменная, хранящую остаток от деления на 100
-         */
-        int b = week % 100;
+        int b = week % 100; // переменная, хранящую остаток от деления на 100
 
         if (a == 0 || (a >= 5 && a <= 9) || (b >= 11 && b <= 14)) {
             message = week + " " + weekText[0];
