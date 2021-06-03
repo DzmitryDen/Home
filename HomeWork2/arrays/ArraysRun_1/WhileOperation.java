@@ -1,26 +1,31 @@
 package HomeWork2.arrays.ArraysRun_1;
 
-import HomeWork2.arrays.ArraysRun;
-
 public class WhileOperation implements IArraysOperation{
 
     @Override
-    public void runFor(int[] name) {
-        ArraysRun.runWhile(name);
+    public void printAll(int[] arr) {
+        int i = 0;
+        while (i < arr.length) {
+            System.out.print(arr[i] + " ");
+            i++;
+        }
     }
 
     @Override
-    public void runWhile(int[] name) {
-        ArraysRun.runWhile(name);
+    public void printAllSecond(int[] arr) {
+        int j = 1;
+        while (j < arr.length) {
+            System.out.print(arr[j] + " ");
+            j += 2;
+        }
     }
 
     @Override
-    public void runDoWhile(int[] name) {
-        ArraysRun.runWhile(name);
-    }
-
-    @Override
-    public void runForeach(int[] name) {
-        ArraysRun.runWhile(name);
+    public void printAllRevers(int[] arr) {
+        int k = arr.length-1;
+        while (k >= 0 ) {
+            System.out.print(arr[k] + " ");
+            k --;
+        }
     }
 }

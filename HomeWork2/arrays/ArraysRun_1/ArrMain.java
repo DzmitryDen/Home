@@ -17,45 +17,35 @@ public class ArrMain {
         ForEachOperation type4 = new ForEachOperation();
 
         System.out.println("Во всех методах использован только do...while\n");
-        type1.runFor(ArraysUtils.arrayFromConsole());
+        type1.printAll(ArraysUtils.arrayFromConsole());
         System.out.println();
-        type1.runWhile(ArraysUtils.arrayFromConsole());
+        type1.printAllSecond(ArraysUtils.arrayFromConsole());
         System.out.println();
-        type1.runDoWhile(ArraysUtils.arrayFromConsole());
-        System.out.println();
-        type1.runForeach(ArraysUtils.arrayFromConsole());
+        type1.printAllRevers(ArraysUtils.arrayFromConsole());
         System.out.println("\n");
 
         System.out.println("Во всех методах использован только while\n");
-        type2.runFor(ArraysUtils.arrayFromConsole());
+        type2.printAll(ArraysUtils.arrayFromConsole());
         System.out.println();
-        type2.runWhile(ArraysUtils.arrayFromConsole());
+        type2.printAllSecond(ArraysUtils.arrayFromConsole());
         System.out.println();
-        type2.runDoWhile(ArraysUtils.arrayFromConsole());
-        System.out.println();
-        type2.runForeach(ArraysUtils.arrayFromConsole());
+        type2.printAllRevers(ArraysUtils.arrayFromConsole());
         System.out.println("\n");
 
         System.out.println("Во всех методах использован только for\n");
-        type3.runFor(ArraysUtils.arrayFromConsole());
+        type3.printAll(ArraysUtils.arrayFromConsole());
         System.out.println();
-        type3.runWhile(ArraysUtils.arrayFromConsole());
+        type3.printAllSecond(ArraysUtils.arrayFromConsole());
         System.out.println();
-        type3.runDoWhile(ArraysUtils.arrayFromConsole());
-        System.out.println();
-        type3.runForeach(ArraysUtils.arrayFromConsole());
+        type3.printAllRevers(ArraysUtils.arrayFromConsole());
         System.out.println("\n");
 
         System.out.println("Во всех методах использован только foreach\n");
-        type4.runFor(ArraysUtils.arrayFromConsole());
+        type4.printAll(ArraysUtils.arrayFromConsole());
         System.out.println();
-        type4.runWhile(ArraysUtils.arrayFromConsole());
+        type4.printAllSecond(ArraysUtils.arrayFromConsole());
         System.out.println();
-        type4.runDoWhile(ArraysUtils.arrayFromConsole());
-        System.out.println();
-        type4.runForeach(ArraysUtils.arrayFromConsole());
+        type4.printAllRevers(ArraysUtils.arrayFromConsole());
         System.out.println("\n");
-
-
     }
 }
