@@ -47,5 +47,6 @@ public class ArrMain {
         System.out.println();
         type4.printAllRevers(ArraysUtils.arrayFromConsole());
         System.out.println("\n");
+
     }
 }

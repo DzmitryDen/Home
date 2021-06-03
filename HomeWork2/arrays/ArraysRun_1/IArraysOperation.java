@@ -5,5 +5,4 @@ public interface IArraysOperation {
 void printAll(int[] arr);
 void printAllSecond(int[] arr);
 void printAllRevers(int[] arr);
-
 }
