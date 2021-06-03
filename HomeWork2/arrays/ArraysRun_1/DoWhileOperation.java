@@ -1,6 +1,7 @@
 package HomeWork2.arrays.ArraysRun_1;
 
 public class DoWhileOperation implements IArraysOperation{
+
     @Override
     public void printAll(int[] arr) {
         int i = 0;

@@ -35,9 +35,9 @@ public class ArrayTasks {
     }
 
     // 2.4.1. Сумма четных положительных элементов массива
-    public static int sumPosit (int[] Method) {
+    public static int sumPosit (int[] arrMeth) {
         int Sum = 0;
-        for (int i : Method) {
+        for (int i : arrMeth) {
             if (i > 0 && i % 2 ==0) {
                 Sum +=i;
             }
@@ -46,26 +46,26 @@ public class ArrayTasks {
     }
 
     // 2.4.2. Максимальный из элементов массива с четными индексами
-    public static int maxEven (int[] Method) {
-        int max = Method[2];
-        for (int i = 2; i < Method.length; i += 2) {
-            if (max < Method[i]) {
-                max = Method[i];
+    public static int maxEven (int[] arrMeth) {
+        int max = arrMeth[2];
+        for (int i = 2; i < arrMeth.length; i += 2) {
+            if (max < arrMeth[i]) {
+                max = arrMeth[i];
             }
         }
         return max;
     }
 
     // 2.4.3. Элементы массива, которые меньше среднего арифметического
-    public static void minAverage (int[] Method) {
+    public static void minAverage (int[] arrMeth) {
 
         int Sum = 0;
-        for (int i : Method) {
+        for (int i : arrMeth) {
             Sum += i;
         }
-        double Average = (double) Sum / Method.length;
+        double Average = (double) Sum / arrMeth.length;
 
-        for (int i : Method) {
+        for (int i : arrMeth) {
             if (i < Average) {
                 System.out.print(i + " ");
             }
@@ -73,41 +73,41 @@ public class ArrayTasks {
     }
 
     // 2.4.4. Найти два наименьших (минимальных) элемента массива
-    public static void twoMin (int[] Method) {
+    public static void twoMin (int[] arrMeth) {
 
-        int min1 = Method[0]; // переменная для хранения 1го минимального значения
-        for (int i = 1; i < Method.length; i++) {
+        int min1 = arrMeth[0]; // переменная для хранения 1го минимального значения
+        for (int i = 1; i < arrMeth.length; i++) {
             int j = 0; // переменная для хранения индекса 1го минимального значения
-            if(min1 > Method[i]) {
-                min1 = Method[i];
+            if(min1 > arrMeth[i]) {
+                min1 = arrMeth[i];
                 j = i;
             }
             int change; // переменная для обмена значениями
-            change = Method[0]; // 1ое минимальное значения помещено на первое место в массив
-            Method[0] = Method[j];
-            Method[j] = change;
+            change = arrMeth[0]; // 1ое минимальное значения помещено на первое место в массив
+            arrMeth[0] = arrMeth[j];
+            arrMeth[j] = change;
         }
 
-        int min2 = Method[1]; // переменная для хранения 2го минимального значения
-        for (int i = 2; i < Method.length; i++) {
+        int min2 = arrMeth[1]; // переменная для хранения 2го минимального значения
+        for (int i = 2; i < arrMeth.length; i++) {
             int j = 1; // переменная для хранения индекса 2го минимального значения
-            if(min2 > Method[i]) {
-                min2 = Method[i];
+            if(min2 > arrMeth[i]) {
+                min2 = arrMeth[i];
                 j = i;
             }
             int change; // переменная для обмена значениями
-            change = Method[1]; // 2ое минимальное значения помещено на второе место в массив
-            Method[1] = Method[j];
-            Method[j] = change;
+            change = arrMeth[1]; // 2ое минимальное значения помещено на второе место в массив
+            arrMeth[1] = arrMeth[j];
+            arrMeth[j] = change;
         }
-        System.out.print(Method[0] + " " + Method[1]);
+        System.out.print(arrMeth[0] + " " + arrMeth[1]);
     }
 
     // 2.4.6. Сумма цифр массива
-    public static int figSum (int[] Method) {
+    public static int figSum (int[] arrMeth) {
 
         int Sum = 0;
-        for (int i : Method) {
+        for (int i : arrMeth) {
 
             int n = Math.abs(i); // модуль числа (элемента массива)
             while (n > 0) {
@@ -119,16 +119,16 @@ public class ArrayTasks {
     }
 
     // 2.4.5. Сжать массив, удалив элементы, принадлежащие интервалу
-    public static void newArray (int[] Method) throws Exception{
+    public static void newArray (int[] arrMeth) throws Exception{
         // Находим границы текущего массива
-        int min = Method[0];
-        int max = Method[0];
-        for (int i = 1; i < Method.length; i++) {
-            if (min > Method[i]) {
-                min = Method[i];
+        int min = arrMeth[0];
+        int max = arrMeth[0];
+        for (int i = 1; i < arrMeth.length; i++) {
+            if (min > arrMeth[i]) {
+                min = arrMeth[i];
             }
-            if(max < Method[i]) {
-                max = Method[i];
+            if(max < arrMeth[i]) {
+                max = arrMeth[i];
             }
         }
         System.out.println("Границы массива: [" + min + ", " + max + "]");
@@ -146,22 +146,22 @@ public class ArrayTasks {
 
         // Находим количество элементов массива из заданного интервала
         int n = 0; // счетчик элементов
-        for (int i = 0; i < Method.length; i++) {
-            if(Method[i] >= min1 && Method[i] <= max1) {
+        for (int i = 0; i < arrMeth.length; i++) {
+            if(arrMeth[i] >= min1 && arrMeth[i] <= max1) {
                 n++;
             }
         }
 
         // Создаем новый массив с размером без учета элементов из интервала
-        int[] arr_1 = new int[Method.length - n];
+        int[] arr_1 = new int[arrMeth.length - n];
 
         // Заносим элементы не попадающие в интервал в новый массив
         int j = 0; // переменная-индекс нового массива
-        for (int i = 0; i < Method.length; i++) {
-            if(Method[i] >= min1 && Method[i] <= max1) {
+        for (int i = 0; i < arrMeth.length; i++) {
+            if(arrMeth[i] >= min1 && arrMeth[i] <= max1) {
                 continue;
             }
-            arr_1[j] = Method[i];
+            arr_1[j] = arrMeth[i];
             j++;
         }
 

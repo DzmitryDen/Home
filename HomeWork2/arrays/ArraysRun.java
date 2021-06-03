@@ -35,8 +35,8 @@ public class ArraysRun {
     }
 
     /** Перебор массива с помощью for */
-    public static void runFor (int[] Method) {
-        int[] container = Method;
+    public static void runFor (int[] arrMeth) {
+        int[] container = arrMeth;
 
         System.out.print("Выводим все элементы массива: ");
         for (int i = 0; i < container.length; i++) {
@@ -58,9 +58,9 @@ public class ArraysRun {
     }
 
     /** Перебор массива с помощью while */
-    public static void runWhile (int[] Method) {
+    public static void runWhile (int[] arrMeth) {
 
-        int[] container = Method;
+        int[] container = arrMeth;
 
         System.out.print("Выводим все элементы массива: ");
         int i = 0;
@@ -88,9 +88,9 @@ public class ArraysRun {
     }
 
     /** Перебор массива с помощью do...while */
-    public static void runDoWhile (int[] Method) {
+    public static void runDoWhile (int[] arrMeth) {
 
-        int[] container = Method;
+        int[] container = arrMeth;
 
         System.out.print("Выводим все элементы массива: ");
         int i = 0;
@@ -121,9 +121,9 @@ public class ArraysRun {
     }
 
     /** Перебор массива с помощью foreach */
-    public static void runForeach (int[] Method) {
+    public static void runForeach (int[] arrMeth) {
 
-        int[] container = Method;
+        int[] container = arrMeth;
 
         System.out.print("Выводим все элементы массива: ");
         for (int i : container) {

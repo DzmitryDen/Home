@@ -1,6 +1,7 @@
 package HomeWork2.arrays.ArraysRun_1;
 
 public class ForOperation implements IArraysOperation{
+
     @Override
     public void printAll(int[] arr) {
         for (int i = 0; i < arr.length; i++) {
