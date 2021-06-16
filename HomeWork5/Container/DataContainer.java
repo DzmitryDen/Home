@@ -26,13 +26,13 @@ public class DataContainer <T>{
             return a;
         }
 
-
+/*
         if(this.data.length == 0) {
             this.data = Arrays.copyOf(this.data, this.data.length + 1);
             this.data[0] = item;
             a = 0;
             return a;
-        };
+        };*/
 
         // ищем null и заменяем на переданное значение
         for (int i = 0; i < this.data.length; i++) {
@@ -51,7 +51,25 @@ public class DataContainer <T>{
         return a;
     }
 
-    public T[] getData() {
-        return data;
+    // возвращает значение из массива по индексу
+    public T get (int index) {
+        if (index >= 0 && index <= data.length-1)
+        return this.data[index];
+        else return null;
     }
+
+    // возвращает массив значений
+    public T[] getItems() {
+        return this.data;
+    }
+
+    // удаляет элемент маассива по индексу
+    public boolean delete (int index) {
+        if (index >= 0 && index <= data.length-1) {
+            return true;
+        }
+
+        else return false;
+    }
+
 }
