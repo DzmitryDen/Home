@@ -6,17 +6,25 @@ public class ContainerMain {
 
     public static void main(String[] args) {
 
-        Integer[] arr = {null};
+        DataContainer<String> container = new DataContainer<>(new String[4]);
 
-        DataContainer<Integer> container = new DataContainer<>(arr);
+        int index1 = container.add("Привет");
+        int index2 = container.add("Как дела");
+        int index3 = container.add("Работаю");
+        int index4 = container.add("Давай потом");
 
-        System.out.println("Номер позиции вставки: " + container.add(777));
+        String text1 = container.get(index1);
+        String text2 = container.get(index2);
+        String text3 = container.get(index3);
+        String text4 = container.get(index4);
 
-        System.out.println("Значение: " + container.get(1));
+        System.out.println(text1);
+        System.out.println(text2);
+        System.out.println(text3);
+        System.out.println(text4);
 
-        System.out.print("Элементы массива: ");
-        for (int i = 0; i < container.getItems().length; i++) {
-            System.out.print(container.getItems()[i] + " ");
-        }
+        container.delete(text1);
+        System.out.println();
+        System.out.println(container.get(index1));
     }
 }

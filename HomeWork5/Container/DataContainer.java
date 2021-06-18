@@ -1,6 +1,7 @@
 package HomeWork5.Container;
 
 import java.util.Arrays;
+import java.util.Objects;
 
 /**
  * DataContainer c однми дженериком (хранит неограниченное количество объектов обобщенного типа
@@ -25,14 +26,6 @@ public class DataContainer <T>{
         if(item == null) {
             return a;
         }
-
-/*
-        if(this.data.length == 0) {
-            this.data = Arrays.copyOf(this.data, this.data.length + 1);
-            this.data[0] = item;
-            a = 0;
-            return a;
-        };*/
 
         // ищем null и заменяем на переданное значение
         for (int i = 0; i < this.data.length; i++) {
@@ -63,13 +56,36 @@ public class DataContainer <T>{
         return this.data;
     }
 
+
     // удаляет элемент маассива по индексу
     public boolean delete (int index) {
-        if (index >= 0 && index <= data.length-1) {
-            return true;
-        }
 
-        else return false;
+        if (index >= 0 && index < this.data.length) {
+            this.data[index] = null; // удаляем значение элемента на позиции
+            if (index < this.data.length-1) {
+                for (int i = index; i < this.data.length-1; i++) {
+                    this.data[i] = this.data[i+1]; // перезаписываем элементы массива смещая в сторону удаленного
+                }
+            }
+            this.data = Arrays.copyOf(this.data, this.data.length-1); // записываем новй массив без последнего элемента
+            return true;
+        } else
+            return false;
+    }
+
+    // удаляет элемент маассива по значению
+    public boolean delete (T item) {
+
+        boolean del = false;
+
+        for (int i = 0; i < this.data.length; i++) {
+            // сравниваем элемент массива с переданным значением и удаляем элемент по индексу значения
+            if(Objects.equals(this.data[i], item )) {
+                del = delete(i);
+                break;
+            }
+        }
+        return del;
     }
 
 }
