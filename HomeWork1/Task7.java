@@ -1,4 +1,4 @@
-package HomeWork1;
+package homeWork1;
 
 /*
         7.** Создать СТАТИЧЕСКИЙ метод String toBinaryString(byte number) и возвращает двоичное представление числа.

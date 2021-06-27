@@ -1,4 +1,4 @@
-package HomeWork1;
+package homeWork1;
 
 // Задание 2 - Приоритет операторов
 

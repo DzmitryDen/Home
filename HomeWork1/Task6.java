@@ -1,4 +1,4 @@
-package HomeWork1;
+package homeWork1;
 
 /*
         6.* Создать СТАТИЧЕСКИЙ метод createPhoneNumber рядом с методом main, данный метод будет
@@ -6,8 +6,6 @@ package HomeWork1;
     массив из 10 цифр (от 0 до 9). Данные цифры должны быть помещены в строку формата: (XXX) XXX-XXXX.
     Например передан массив: {1,2,3,4,5,6,7,8,9,0}, возвращаемый результат: (123) 456-7890.
 */
-
-import java.util.Arrays;
 
 public class Task6 {
     public static void main(String[] args) {
