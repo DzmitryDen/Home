@@ -21,7 +21,7 @@ public class DataContainer <T>{
     // метод (добавляет данные во внутреннее поле data в позицию null и возвращает номер позиции вставки)
     public int add (T item) {
 
-        int a = -1; // хранит возвращаемое значение
+        int a = -1; // хранит возвращаемое значение (номер позиции)
 
         // при попытке вствки null возвращаем -1
         if(item == null) {
@@ -94,18 +94,37 @@ public class DataContainer <T>{
         
         if(comparator != null ) {
 
-            for (int i = 0; i < data.length; i++) {
-                for (int k = i + 1; k < data.length; k++) {
-                    if (comparator.compare(data[i],data[k] ) > 0) {
-                        T buf = data[i];
-                        data[i] = data[k];
-                        data[k] = buf;
+            for (int i = 0; i < this.data.length; i++) {
+                for (int k = i + 1; k < this.data.length; k++) {
+                    if (comparator.compare(this.data[i],this.data[k] ) > 0) {
+                        T buf = this.data[i];
+                        this.data[i] = this.data[k];
+                        this.data[k] = buf;
                     }
-
                 }
             }
         }
-        
     }
 
+    // переопределение toString()
+    @Override
+    public String toString() {
+
+        StringBuilder stringBuilder = new StringBuilder(data.length);
+
+        stringBuilder.append("dataContent{");
+
+        for (int i = 0; i < this.data.length; i++) {
+
+            if(this.data[i] != null) {
+                stringBuilder.append(this.data[i]);
+            }
+            if ((i != this.data.length-1) && this.data[i+1] != null){
+                stringBuilder.append(", ");
+            }
+        }
+
+        stringBuilder.append("}");
+        return stringBuilder.toString();
+    }
 }
