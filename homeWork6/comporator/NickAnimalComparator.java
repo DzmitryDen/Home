@@ -4,7 +4,7 @@ import homeWork6.dto.Animal;
 
 import java.util.Comparator;
 
-public class AgeAnimalComparator implements Comparator<Animal> {
+public class NickAnimalComparator implements Comparator<Animal> {
 
     @Override
     public int compare(Animal o1, Animal o2) {
@@ -21,10 +21,9 @@ public class AgeAnimalComparator implements Comparator<Animal> {
             return 0;
         }
 
-        int age1 = o1.getAge(); // возраст первого животного
-        int age2 = o2.getAge(); // возраст второго животного
+        String nick1 = o1.getNick();
+        String nick2 = o2.getNick();
 
-
-        return age1 - age2;
+        return nick1.compareTo(nick2);
     }
 }

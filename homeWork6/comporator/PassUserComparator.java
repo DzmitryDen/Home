@@ -8,6 +8,18 @@ public class PassUserComparator implements Comparator<Person> {
     @Override
     public int compare(Person o1, Person o2) {
 
+        if(o1 == null && o2 != null) {
+            return 1;
+        }
+
+        if(o1 != null && o2 == null) {
+            return -1;
+        }
+
+        if(o1 == null && o2 == null) {
+            return 0;
+        }
+
         String password1 = o1.getPassword(); // пароль первого пользователя
         String password2 = o2.getPassword(); // пароль второго пользователя
 
