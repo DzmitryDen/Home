@@ -10,8 +10,11 @@ public class FileRead {
     private String path; // путь к файлу
     private String[]  arr; // массив слов
 
-    public FileRead(String path) {
+    public FileRead(String path) throws IOException {
         this.path = path;
+
+        readToStr(path);
+        putArr();
     }
 
     // Читаем файл по заданному пути и возвращаем строку
@@ -64,24 +67,38 @@ public class FileRead {
     public void printCountWords() {
 
         int count = putList().size();
-        System.out.println("Общее количество слов, используемый в тексте: " + count);
+        System.out.println("Общее количество слов, используемых в тексте: " + count);
     }
 
 
-/*    private Map<Integer, String> putMap() {
+    // заполняем коллекцию map - K:слово, V:количество повторений в тексте
+    private Map<String, Integer> putMap(){
 
-        Map<Integer, String> map = new HashMap<Integer, String>();
+        List<String> list = putList();
+        Map<String, Integer>  map = new HashMap<String, Integer>(); // создаем колекцию map
 
-       int num = 0; // номер позиции (ключа)
+        boolean check = true;
 
-        for (String str : this.arr) {
-            map.put(num, str);
-            num++;
+        while (check) {
+
+            int count = 0; // счетчик одинаковых слов в списке
+            String firstWord = list.get(0); // первое слово из списка
+
+            for (int i = 0; i < list.size(); i++) {
+                if(list.get(i).equals(firstWord)) {
+                    count++; // посчитали количество слов в списке
+                }
+            }
+
+            map.put(firstWord, count); // добавили в map слово и количество его повторений
+
+            for (int i = 0; i < count; i++) {
+                list.remove(firstWord); // удалили из списка все одинаковые слова
+            }
+
+            if (list.size() == 0) check = false;
         }
 
         return map;
-    }*/
-
-
-    //
+    }
 }
